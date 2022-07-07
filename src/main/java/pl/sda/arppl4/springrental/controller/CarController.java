@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import pl.sda.arppl4.springrental.model.Car;
 import pl.sda.arppl4.springrental.service.CarService;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @RestController
@@ -32,13 +34,17 @@ public class CarController {
         carService.addCar(car);
     }
 
+    @DeleteMapping("/delete/{identifier}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteCar(@PathVariable(name="identifier") Long identyfikator){
+        log.info("Delete car using id " + identyfikator);
+        carService.deleteByID(identyfikator);
+    }
 
-
-
-
-
-
-
-
+    @PatchMapping("/update")
+    public void upDateProduct(@RequestBody Car car){
+        log.info("Car update " + car);
+        carService.updateCar(car);
+    }
 
 }
