@@ -1,13 +1,10 @@
 package pl.sda.arppl4.springrental.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Data
@@ -23,10 +20,22 @@ public class CarRental {
 
     private String clientName;
     private String clientSurname;
+
+    @CreationTimestamp
     private LocalDateTime rentStartDate;
     private LocalDateTime rentEndDate;
     private Double pricePerHour;
 
+    @ManyToOne()
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    @JsonBackReference
+    private Car car;
 
-
+    public CarRental(String clientName, String clientSurname, Double pricePerHour) {
+        this.clientName = clientName;
+        this.clientSurname = clientSurname;
+        this.pricePerHour = pricePerHour;
+    }
 }
+

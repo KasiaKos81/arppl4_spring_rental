@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import pl.sda.arppl4.springrental.model.Car;
+import pl.sda.arppl4.springrental.model.dto.CarDTO;
 import pl.sda.arppl4.springrental.service.CarService;
 
 import javax.persistence.EntityNotFoundException;
@@ -21,11 +22,19 @@ public class CarController {
     private final CarService carService;
 
     @GetMapping("list/")
-    public List<Car> getAllCars(){
+    public List<CarDTO> getAllCars(){
         log.info("Get the list of all cars");
-        List<Car> list = carService.getAllCars();
+        List<CarDTO> list = carService.getAllCars();
         return list;
     }
+
+   // @GetMapping()
+  //  public ResponseEntity<List<CarDTO>> list() {
+    //    log.info("Received request: list");
+     //   return ResponseEntity
+        //        .status(HttpStatus.OK)
+       //         .body(carService.findAll());
+ //   }
 
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)

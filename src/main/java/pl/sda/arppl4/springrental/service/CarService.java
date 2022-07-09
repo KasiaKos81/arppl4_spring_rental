@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import pl.sda.arppl4.springrental.model.Car;
+import pl.sda.arppl4.springrental.model.dto.CarDTO;
 import pl.sda.arppl4.springrental.repository.CarRepository;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,9 +25,18 @@ public class CarService {
     private final CarRepository carRepository;
 
     public void addCar(Car car) {carRepository.save(car);}
-    public List<Car> getAllCars() {
-        return carRepository.findAll();
+    public List<CarDTO> getAllCars() {
+
+        List<Car> carList = carRepository.findAll();
+
+        List<CarDTO> cars = new ArrayList<>();
+        for (Car car : carList) {
+            cars.add(car.mapToCarDTO());
+        }
+
+        return cars;
     }
+
 
     public void deleteByID(Long identyfikator) {
         carRepository.deleteById(identyfikator);

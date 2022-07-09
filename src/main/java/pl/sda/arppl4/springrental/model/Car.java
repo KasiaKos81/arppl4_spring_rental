@@ -1,11 +1,15 @@
 package pl.sda.arppl4.springrental.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import pl.sda.arppl4.springrental.model.dto.CarDTO;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Data
 @Entity
@@ -27,6 +31,24 @@ public class Car {
     @Enumerated(EnumType.STRING)
     private Transmission transmission;
     private Double capacity;
+
+    @OneToMany(mappedBy = "car", fetch = FetchType.EAGER)
+    @EqualsAndHashCode.Exclude
+    @JsonManagedReference
+    private Set<CarRental> carRentals;
+
+    public CarDTO mapToCarDTO() {
+        return new CarDTO(
+                id,
+                name,
+                brand,
+                productionDate,
+                bodyType,
+                seatsNo,
+                transmission,
+                capacity
+        );
+    }
 
 
 
