@@ -1,10 +1,7 @@
 package pl.sda.arppl4.springrental.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import pl.sda.arppl4.springrental.model.dto.CarDTO;
 
 import javax.persistence.*;
@@ -13,6 +10,7 @@ import java.util.Set;
 
 @Data
 @Entity
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 

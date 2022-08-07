@@ -21,7 +21,7 @@ public class CarController {
 
     private final CarService carService;
 
-    @GetMapping("list/")
+    @GetMapping("/list")
     public List<CarDTO> getAllCars(){
         log.info("Get the list of all cars");
         List<CarDTO> list = carService.getAllCars();

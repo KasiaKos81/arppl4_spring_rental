@@ -1,0 +1,292 @@
+
+###
+POST http://localhost:8080/api/car/add
+Content-Type: application/json
+
+{
+  "name": "Hondzix",
+  "brand": "Honda",
+  "productionDate": "2004-01-01",
+  "bodyType": "SEDAN",
+  "seatsNo": 4,
+  "transmission": "AUTO",
+  "capacity": 1.7
+
+}
+
+###
+POST http://localhost:8080/api/car/add
+Content-Type: application/json
+
+{
+  "name": "Toyotix",
+  "brand": "Toyota",
+  "productionDate": "2019-02-01",
+  "bodyType": "HATCHBACK",
+  "seatsNo": 4,
+  "transmission": "AUTO",
+  "capacity": 1.8
+
+}
+
+###
+POST http://localhost:8080/api/car/add
+Content-Type: application/json
+
+{
+  "name": "Hyundaix",
+  "brand": "Hyundai",
+  "productionDate": "2008-12-01",
+  "bodyType": "HATCHBACK",
+  "seatsNo": 4,
+  "transmission": "MANUAL",
+  "capacity": 1.2
+
+}
+
+###
+GET http://localhost:8080/api/car/list/
+
+###
+POST http://localhost:8080/api/car/add
+Content-Type: application/json
+
+{
+  "name": "Będzisz Miał Wydatki",
+  "brand": "BMW",
+  "productionDate": "2018-12-01",
+  "bodyType": "SUV",
+  "seatsNo": 4,
+  "transmission": "AUTO",
+  "capacity": 2.4
+
+}
+
+###
+POST http://localhost:8080/api/car/add
+Content-Type: application/json
+
+{
+  "name": "A6",
+  "brand": "Audi",
+  "productionDate": "2022-01-01",
+  "bodyType": "SEDAN",
+  "seatsNo": 4,
+  "transmission": "AUTO",
+  "capacity": 2.0
+
+}
+
+###
+POST http://localhost:8080/api/car/add
+Content-Type: application/json
+
+{
+  "name": "A4",
+  "brand": "Audi",
+  "productionDate": "2008-12-01",
+  "bodyType": "SEDAN",
+  "seatsNo": 4,
+  "transmission": "MANUAL",
+  "capacity": 2.2
+
+}
+
+###
+POST http://localhost:8080/api/car/add
+Content-Type: application/json
+
+{
+  "name": "Mazdzix",
+  "brand": "Mazda",
+  "productionDate": "2008-12-01",
+  "bodyType": "HATCHBACK",
+  "seatsNo": 4,
+  "transmission": "MANUAL",
+  "capacity": 1.8
+
+}
+
+###
+POST http://localhost:8080/api/car/add
+Content-Type: application/json
+
+{
+  "name": "Golfik",
+  "brand": "VW",
+  "productionDate": "2008-12-01",
+  "bodyType": "HATCHBACK",
+  "seatsNo": 3,
+  "transmission": "MANUAL",
+  "capacity": 1.6
+
+}
+
+###
+POST http://localhost:8080/api/car/add
+Content-Type: application/json
+
+{
+  "name": "Auto Ktorego Nie Chce Miec",
+  "brand": "Skoda",
+  "productionDate": "2008-12-01",
+  "bodyType": "SEDAN",
+  "seatsNo": 4,
+  "transmission": "MANUAL",
+  "capacity": 2.0
+
+}
+
+###
+GET http://localhost:8080/api/car/list/
+
+<> 2022-07-07T195147.200.json
+
+###
+DELETE http://localhost:8080/api/car/delete/6
+
+###
+PATCH http://localhost:8080/api/car/update
+Content-Type: application/json
+
+{
+  "id": 7,
+  "name": "500",
+  "brand": "Fiat",
+  "capacity": 1.6
+}
+
+<> 2022-07-07T195028.404.json
+
+
+###
+GET http://localhost:8080/api/carRental/available
+
+<> 2022-07-09T105158.200.json
+<> 2022-07-09T105110.200.json
+<> 2022-07-09T104304.200.json
+<> 2022-07-09T104248.200.json
+<> 2022-07-07T210130.200.json
+<> 2022-07-07T210050.404.json
+
+###
+POST http://localhost:8080/api/car/add
+Content-Type: application/json
+
+{
+  "name":  "Maluszek",
+  "brand": "Fiat",
+  "productionDate": "2008-12-01",
+  "bodyType": "HATCHBACK",
+  "seatsNo": 4,
+  "transmission": "MANUAL",
+  "capacity": 1.0
+}
+
+###
+POST http://localhost:8080/api/carRental/rent?carId=13
+Content-Type: application/json
+
+{
+  "clientName": "Jaroslaw",
+  "clientSurname": "Kaczynski",
+  "pricePerHour": 300.0
+}
+
+<> 2022-07-09T114512.500.json
+<> 2022-07-09T112024.500.json
+<> 2022-07-09T105915.404.json
+<> 2022-07-09T105314.404.json
+<> 2022-07-09T105048.404.json
+<> 2022-07-09T105037.404.json
+
+###
+GET http://localhost:8080/api/car/list/
+
+<> 2022-07-09T114312.200.json
+<> 2022-07-09T114046.200.json
+<> 2022-07-09T105253.200.json
+
+###
+GET http://localhost:8080/api/carRental/available
+
+<> 2022-07-09T114154.200.json
+
+###
+POST http://localhost:8080/api/carRental/rent?carId=12
+Content-Type: application/json
+
+{
+  "clientName": "Mateusz",
+  "clientSurname": "Morawiecki",
+  "pricePerHour": 500.0
+}
+
+<> 2022-07-09T114229.500.json
+<> 2022-07-09T114128.500.json
+<> 2022-07-09T112118.400.json
+
+###
+GET http://localhost:8080/api/car/list/
+
+<> 2022-07-09T131659.200.json
+<> 2022-07-09T124523.200.json
+
+###
+GET http://localhost:8080/api/carRental/available
+
+<> 2022-07-09T124658.200.json
+
+###
+GET http://localhost:8080/api/carRental/available
+
+<> 2022-07-09T131926.200.json
+<> 2022-07-09T131748.200.json
+<> 2022-07-09T131637.200.json
+<> 2022-07-09T125820.200.json
+<> 2022-07-09T125758.200.json
+<> 2022-07-09T125715.200.json
+<> 2022-07-09T125519.200.json
+
+###
+POST http://localhost:8080/api/carRental/rent?carId=11
+Content-Type: application/json
+
+{
+  "clientName": "Andrzej",
+  "clientSurname": "Duda",
+  "pricePerHour": 500.0
+}
+
+<> 2022-07-09T151847.410.json
+<> 2022-07-09T151827.500.json
+<> 2022-07-09T131617.500.json
+
+###
+POST http://localhost:8080/api/carRental/rent?carId=10
+Content-Type: application/json
+
+{
+  "clientName": "Zbigniew",
+  "clientSurname": "Ziobro",
+  "pricePerHour": 100000.0
+}
+
+###
+PATCH http://localhost:8080/api/carRental/return?carId=10
+
+<> 2022-07-09T143006.404.json
+<> 2022-07-09T142958.404.json
+
+###
+PATCH http://localhost:8080/api/carRental/return?carId=12
+
+<> 2022-07-09T143052.404.json
+
+###
+POST http://localhost:8080/api/carRental/rent?carId-88
+
+<> 2022-07-09T145647.400.json
+
+###
+POST http://localhost:8080/api/student/add
